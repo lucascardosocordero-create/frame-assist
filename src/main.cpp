@@ -70,7 +70,7 @@ class $modify(AssistPlayLayer, PlayLayer) {
 		if (m_fields->holdFrames > 0) {
 			m_fields->holdFrames--;
 			if (m_fields->holdFrames == 0) {
-				this->releaseButton(PlayerButton::Jump, true);
+				this->handleButton(false, 1, true);
 			}
 			return;
 		}
@@ -90,7 +90,7 @@ class $modify(AssistPlayLayer, PlayLayer) {
 		} else {
 			showWarning(false);
 			if (danger) {
-				this->pushButton(PlayerButton::Jump, true);
+				this->handleButton(true, 1, true);
 				m_fields->holdFrames = 3;
 			}
 		}
