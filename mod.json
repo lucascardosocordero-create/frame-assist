@@ -1,0 +1,41 @@
+{
+	"geode": "5.11.2",
+	"gd": "2.2081",
+	"version": "v1.0.0",
+	"id": "lucas.frameassist",
+	"name": "Frame Assist",
+	"developer": "Lucas",
+	"description": "Te ayuda a esquivar pinchos mirando N fotogramas hacia delante.",
+	"settings": {
+		"enabled": {
+			"type": "bool",
+			"name": "Activado",
+			"default": true
+		},
+		"practice-only": {
+			"type": "bool",
+			"name": "Solo en modo práctica",
+			"description": "Si está activo, la ayuda solo funciona en modo práctica.",
+			"default": true
+		},
+		"mode": {
+			"type": "string",
+			"name": "Modo",
+			"description": "assist = salta por ti. warn = solo te avisa con un '!' en pantalla.",
+			"default": "assist",
+			"one-of": ["assist", "warn"]
+		},
+		"lookahead-frames": {
+			"type": "int",
+			"name": "Fotogramas de antelación",
+			"description": "Cuántos fotogramas (a 60 fps) mira hacia delante. 1 = ayuda mínima, 10 = ayuda grande.",
+			"default": 1,
+			"min": 1,
+			"max": 10,
+			"control": {
+				"slider": true,
+				"input": true
+			}
+		}
+	}
+}
